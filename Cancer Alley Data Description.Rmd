@@ -1,0 +1,208 @@
+---
+title: "Cancer Alley Data Description"
+author: "Rebecca Letsinger"
+date: "February 20, 2024"
+output: pdf_document
+---
+
+library(readr)
+
+# *restatus* , Resident Status
+1- state and county occurence and residence are the same 
+2- state of occurence and residence are the same, but County is different
+3- state of occurence and residence are different, but both are in the U.S.
+4- state of occurence is one of the 50 states or district of columbia, but place of residence is outside of the U.S.
+
+# *stocr* , state of occurence
+- Abbreviation for state where death occured
+
+# *cntyocr* , county of occurence
+- Abbreviation for county where death occurred FIPS data
+
+# *popcntyocr* , population size of county of occurrence
+0- county of 1,000,000 or more
+1- county of 500,000 to 1,000,000
+2- county of 250,000 to 500,000
+3- county of 100,000 to 250,000
+9- county of less than 100,000
+
+# *strsd* , state of residence 
+- FIPS code for state of residence
+
+# *cntyrsd*
+- FIPS code for county of residence
+
+# *popcntyresd* , population size of county of residence 
+0- county of 1,000,000 or more
+1- county of 500,000 to 1,000,000
+2- county of 250,000 to 500,000
+3- county of 100,000 to 250,000
+9- county of less than 100,000
+z- foreign residents
+
+# *stbrth* , state/ country of birth
+State two letter abrieviation
+PR - Puerto Rico
+VI - Virgin Islands
+GU - Guam
+AS - American Samoa
+MP - Northern Marianas
+US - United States
+CC - Canada
+MX - Mexico
+CU - Cuba
+YY - Remainder of the world
+ZZ - Unknown place of birth
+
+# *brthr*
+- Same as 43
+
+# *educ1989*
+00 - No formal education
+01-08 - Years of elementary school
+9 - 1 year of high school
+10 - 2 years of high school
+11 - 3 years of high school
+12 - 4 years of high school
+13 - 1 year of college
+14 - 2 years of college
+15 - 3 years of college
+16 - 4 years of college
+17 - 5 or more years of college
+99 - not stated 
+
+# *educ2003*
+1 - 8th grade or less
+2 - 9-12th grade no diploma
+3 - high school graduate or GED completed
+4 - some college credit, but no degree
+5 - Associate degree
+6 - Bachelor's degree
+7 - Master's degree
+8 - Doctorate or professional degree
+9 - unknown
+
+# *educflag* , education reporting flag
+0 - 1989 revision of education item on certificate
+1 - 2003 revision of education item on certificate
+2 - no education item on certificate
+
+# *monthdth* , month of death
+1 - January
+2 - February
+3 - March
+4 - April
+5 - May 
+6 - June
+7 - July 
+8 - August 
+9 - September
+10 - October
+11 - November 
+12 - December
+
+# sex
+M - Male
+F- Female
+
+# age
+1 - 001-135,999 - Years
+2 - 001-011,999 - Months
+4 - 001-027,999 - Days
+5 - 001-023,999 - Hours
+6 - 001-059,999 - Minutes
+9 - 999 - Age not stated
+
+# *placdth* , place of death
+1 - hospital, clinic, or medical center - inpatient
+2 - hospital, clinic, or medical center - outpatient or admitted to emergency room
+3 - hospital, clinic, or medical center - dead on arrival
+4 - decendent's home
+5 - hospice facility
+6 - nursing home / long term care faciliy
+7 - other
+9 - place of death unknown
+
+# *marstat* , marital status
+S - Never married, single
+M - Married
+W - Widowed
+D - Divorced
+U - Marital status unknwn
+
+# *weekday* , day of the week of death
+1 - sunday
+2 - monday
+3 - tuesday
+4 - wednesday
+5 - thursday 
+6 - friday 
+7 - saturday 
+9 - unknown
+
+# *year* , current year
+2019 - 2019
+
+# *mandeath* , manner of death 
+1 - accident
+2 - suicide
+3 - homicide
+4 - pending investigation 
+5 - could not determine
+6 - self inflicted 
+7 - natural
+9 - not specified
+
+# *prgn* , pregnant
+
+# *ucod* , underlying cause of death
+ICD codes
+
+# *ucr358* , 358 cause recodes
+
+# *ucr113* , 113 cause recodes
+
+# *ucr39* , 39 cause recodes
+
+# *race*
+01 - white
+02 - black
+03 - american indian
+04 - chinese
+05 - japanese
+06 - hawaiian
+07 - filipino
+18 - asian indian
+28 - korean
+38 - somoan
+48 - vietnamese
+58 - guamanian
+68 - other asian or pacific islander in areas that do not report them separately
+78 - combined other asian or pacific islander, includes codes 18-58 for areas that do not report them separately
+
+
+# *racer3*
+1 - white
+2 - races other than white or black
+3 - blace
+
+# *racer5*
+0 - other
+1 - white
+2 - black
+3 - american indian
+4 - asian or pacific islander
+
+# *hispanic , hispanic origin
+100-199 - Non Hispanic
+200-209 - Spanaird 
+210-219 - Mexican
+260-269 - Puerto Rican
+270-274 - Cuban
+275-279 - Dominican
+220 - Central and South America
+221-230 - Central American
+231-249 - South American 
+250-259 - Latin American
+280-299 - Other Hispanic
+996-999 - Unknown
